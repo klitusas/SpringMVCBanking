@@ -1,0 +1,43 @@
+package banking;
+
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class BankingApplication implements CommandLineRunner {
+
+    @Autowired
+    AccountRepository accountRepository;
+
+    @Autowired
+    UserRepository userRepository;
+
+    public static void main(String[] args) {
+        SpringApplication.run(BankingApplication.class, args);
+    }
+
+	@Override
+	@Transactional
+	public void run(String... args) throws Exception {
+		
+		List<Account> accounts = new LinkedList<Account>();
+		accounts.add(new Account("Saving", "Good"));
+		accounts.add(new Account("Regular", "Better"));
+		accountRepository.save(accounts);
+		
+		User user = new User("Andrejus", "Solovjovas", "test@test.no",  accounts);		
+		userRepository.save(user);	
+	
+	}
+
+}

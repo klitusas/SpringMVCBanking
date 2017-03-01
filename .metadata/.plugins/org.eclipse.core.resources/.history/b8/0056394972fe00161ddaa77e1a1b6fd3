@@ -1,0 +1,71 @@
+package banking;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+
+@Entity
+public class Account {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private long id;
+    private String label;
+    private String description;
+    private double balance;
+    
+    @ManyToMany(cascade = {CascadeType.ALL})
+    public List<Transaction> transaction;
+  
+
+    public Account() {
+        super();
+    }
+
+    public Account(String label, String description, double balance, List<Transaction> transaction) {
+        super();
+        this.label = label;
+        this.description = description;
+        this.balance = balance;
+        this.transaction = transaction;
+        //this.user = user;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+    
+}

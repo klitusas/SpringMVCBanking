@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bank Online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+	<link rel="stylesheet" href="/custom.css" media="screen"/>
+</head>
+<body>
+	<div class="container">
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div>
+			<h1>Deposit</h1>
+			<h3>Here you can withdraw money from your accounts: </h3>
+			<br/>
+			<br/>
+			<nav class="navbar navbar-default navbar-static-top">
+ 				 <div class="container">
+			  			<div class="navbar-header">
+					      <a class="navbar-brand" href="#">Bank Online</a>
+					    </div>
+					    <ul class="nav navbar-nav">
+					      <li><a th:href="@{/accounts}">Home</a></li>
+					      <li><a  th:href="@{/deposit}">Deposit money</a></li>
+					      <li><a th:href="@{/transfer}">Transfer money</a></li>
+					      <li><a th:href="@{/withdraw}">Withdraw money</a></li>
+					      <li><a th:href="@{/loans}">Apply for loan</a></li>
+					    </ul>
+ 				 </div>
+			</nav>
+				<hr/>
+            <form class="form-horizontal" th:action="@{/loans}"  method="post" enctype="multipart/form-data" >
+				    <div class="funkyradio">
+				        <div class="funkyradio-primary">
+				                        <td><form:radiobutton path="size" value="big"/> Yes
+                 						<form:radiobutton path="size" value="small"/> No </td>
+				        
+				            <!-- <input type="radio" name="type" id="radio1"/> -->
+				            <label for="radio1">Long Term ( Lower monthly payments, Typically higher interest rates
+ Higher total cost)</label>
+				        </div>
+				    </div>
+				    <div class="funkyradio">
+				        <div class="funkyradio-primary">
+				            <input type="radio" name="type" id="radio2"/>
+				            <label for="radio2">ShortTerm ( Higher monthly payments, Typically lower interest rates, Lower total cost)</label>
+				        </div>
+				    </div>
+				    <hr/>
+				    <div class="form-group">
+	                    <label class="col-lg-2 control-label">Amount to borrow:</label>
+	                    <div class="col-lg-6">
+	                    	<input type="text" class="form-control" name="amount"/>
+	                    </div>
+                	</div>
+                	<span class="input-group-btn">
+						<button type="submit" class="btn btn-default">Apply</button>
+					</span>
+            </form>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

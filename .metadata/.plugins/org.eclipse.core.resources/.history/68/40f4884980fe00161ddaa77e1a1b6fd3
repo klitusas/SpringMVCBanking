@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+	<title>Developers database</title> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Developers</h1>
+
+	<hr/>
+	<form th:action="@{/accounts}" method="post" enctype="multipart/form-data">
+		<div>
+			From account: <input name="fromAccount" />
+		</div>
+		<div>
+			To account: <input name="toAccount" />
+		</div>
+		<div>
+			Amount: <input name="amount" />
+		</div>
+		<div>
+			<input type="submit" value="Create developer" name="button"/>
+		</div>
+	</form>
+</body>
+</html>

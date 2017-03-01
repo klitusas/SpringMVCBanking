@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bank Online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+</head>
+<body>
+	<div class="container">
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div>
+			<h1>Deposit</h1>
+			<h3>Here is some information regarding your bank accounts: </h3>
+			<br/>
+			<br/>
+			<nav class="navbar navbar-default navbar-static-top">
+ 				 <div class="container">
+			  			<div class="navbar-header">
+					      <a class="navbar-brand" href="#">Bank Online</a>
+					    </div>
+					    <ul class="nav navbar-nav">
+					      <li><a th:href="@{/accounts}">Home</a></li>
+					      <li><a  th:href="@{/deposit}">Deposit money</a></li>
+					      <li><a href="#">Withdraw money</a></li>
+					      <li><a href="#">Apply for loan</a></li>
+					    </ul>
+ 				 </div>
+			</nav>
+				<hr/>
+				<form th:action="@{/deposit}" method="post" enctype="multipart/form-data">
+					<div>
+						From account: <input name="fromAccount" />
+					</div>
+					<div>
+						To account: <input name="toAccount" />
+					</div>
+					<div>
+						Amount: <input name="amount" />
+					</div>
+					<div>
+						Message: <input name="description" />
+					</div>
+					<div>
+						<input type="submit" value="Deposit" name="button"/>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bank Online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+</head>
+<body>
+	<div class="container">
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div>
+			<h1>Deposit</h1>
+			<h3>Here is some information regarding your bank accounts: </h3>
+			<br/>
+			<br/>
+			<nav class="navbar navbar-default navbar-static-top">
+ 				 <div class="container">
+			  			<div class="navbar-header">
+					      <a class="navbar-brand" href="#">Bank Online</a>
+					    </div>
+					    <ul class="nav navbar-nav">
+					      <li><a th:href="@{/accounts}">Home</a></li>
+					      <li><a  th:href="@{/deposit}">Deposit money</a></li>
+					      <li><a href="#">Withdraw money</a></li>
+					      <li><a href="#">Apply for loan</a></li>
+					    </ul>
+ 				 </div>
+			</nav>
+				<hr/>
+				<form class="form-horizontal" th:action="@{/deposit}"  method="post" enctype="multipart/form-data" >
+            	<fieldset>
+            		<div class="form-group">
+	                    <label class="col-lg-2 control-label">From account:</label>
+	                    <div class="col-lg-6">
+						    <select name="fromAccount">
+								<option th:each="account : ${accounts}" 
+									th:value="${account.id}" 
+									th:text="${account.label}">From </option>
+							</select>
+	                    </div>
+                	</div>
+            		<div class="form-group">
+	                    <label class="col-lg-2 control-label" >To account:</label>
+	                    <div class="col-lg-6">
+	                    	<input type="text" class="form-control" name="toAccount"/>
+	                    </div>
+                	</div>
+                	<div class="form-group">
+	                    <label class="col-lg-2 control-label">Amount:</label>
+	                    <div class="col-lg-6">
+	                    	<input type="text" class="form-control" name="amount"/>
+	                    </div>
+                	</div>
+                	<div class="form-group">
+	                    <label class="col-lg-2 control-label">Message:</label>
+	                    <div class="col-lg-6">
+	                    	<input type="text" class="form-control" name="description"/>
+	                    </div>
+                	</div>
+                	<span class="input-group-btn">
+						<button type="submit" class="btn btn-default">Back</button>
+					</span>
+            	</fieldset>
+            </form>
+<!-- 				<form th:action="@{/deposit}" method="post" enctype="multipart/form-data">
+					<div>
+						From account: <input name="fromAccount" />
+					</div>
+					<div>
+						To account: <input name="toAccount" />
+					</div>
+					<div>
+						Amount: <input name="amount" />
+					</div>
+					<div>
+						Message: <input name="description" />
+					</div>
+					<div>
+						<input type="submit" value="Deposit" name="button"/>
+					</div>
+				</form> -->
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

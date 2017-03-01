@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bank Online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+</head>
+<body>
+	<div class="container">
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div>
+			<h1>Deposit</h1>
+			<h3>Here you can withdraw money from your accounts: </h3>
+			<br/>
+			<br/>
+			<nav class="navbar navbar-default navbar-static-top">
+ 				 <div class="container">
+			  			<div class="navbar-header">
+					      <a class="navbar-brand" href="#">Bank Online</a>
+					    </div>
+					    <ul class="nav navbar-nav">
+					      <li><a th:href="@{/accounts}">Home</a></li>
+					      <li><a  th:href="@{/deposit}">Deposit money</a></li>
+					      <li><a th:href="@{/transfer}">Transfer money</a></li>
+					      <li><a th:href="@{/withdraw}">Withdraw money</a></li>
+					      <li><a href="#">Apply for loan</a></li>
+					    </ul>
+ 				 </div>
+			</nav>
+				<hr/>
+            <form class="form-horizontal" th:action="@{/withdraw}"  method="post" enctype="multipart/form-data" >
+				    <div class="funkyradio">
+				        <div class="funkyradio-default">
+				            <input type="radio" name="radio" id="radio1" />
+				            <label for="radio1">First Option default</label>
+				        </div>
+				        <div class="funkyradio-primary">
+				            <input type="radio" name="radio" id="radio2" checked/>
+				            <label for="radio2">Second Option primary</label>
+				        </div>
+				        <div class="funkyradio-success">
+				            <input type="radio" name="radio" id="radio3" />
+				            <label for="radio3">Third Option success</label>
+				        </div>
+				        <div class="funkyradio-danger">
+				            <input type="radio" name="radio" id="radio4" />
+				            <label for="radio4">Fourth Option danger</label>
+				        </div>
+				        <div class="funkyradio-warning">
+				            <input type="radio" name="radio" id="radio5" />
+				            <label for="radio5">Fifth Option warning</label>
+				        </div>
+				        <div class="funkyradio-info">
+				            <input type="radio" name="radio" id="radio6" />
+				            <label for="radio6">Sixth Option info</label>
+				        </div>
+				    </div>
+				</div>
+            </form>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

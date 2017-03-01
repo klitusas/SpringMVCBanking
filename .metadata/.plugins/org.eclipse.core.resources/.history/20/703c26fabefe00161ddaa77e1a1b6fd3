@@ -1,0 +1,61 @@
+package banking;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+
+@Entity
+public class Loan {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private long id;
+    private double amount;
+    private String type;
+    
+    @OneToMany(cascade = {CascadeType.ALL})
+    private User user;
+  
+
+    public Loan() {
+        super();
+    }
+
+    public Loan(int amount, String type) {
+        super();
+        
+        this.setAmount(amount);
+        this.setType(type);
+        
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+   
+    
+}
