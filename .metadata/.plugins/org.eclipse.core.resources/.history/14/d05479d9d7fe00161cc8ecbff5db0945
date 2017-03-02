@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen"/>
+	<link rel="stylesheet" href="/custom.css" media="screen"/>
+<title>Spring Security Example - ProgrammingFree</title>
+</head>
+<body>
+	<div class="container">
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div>
+			<h1>Welcome to our online bank</h1>
+			<h3>Here you are able to deposit, transfer, withdraw and even loan some money! </h3>
+			<br/>
+			<br/>
+
+				<div class="details">
+					<h2>Spring Security for Spring MVC 4 Application Simple Example</h2>
+			
+				</div>
+
+					<div class="alert-normal">
+						Click <a th:href="@{/accounts}">Home</a>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+				
+</body>
+</html>
